@@ -1,13 +1,183 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#drum-machine {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 50vh;
+  width: 50vh;
+  background-image: url("natural-wooden-background.jpg");
+  border: 5px solid rgb(77, 39, 39);
+  border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+#display {
+  height: 12vh;
+  width: 60%;
+  background: linear-gradient(
+    to right,
+    rgb(20, 17, 25) 0%,
+    rgb(69, 61, 52) 80%,
+    rgb(57, 50, 45) 100%
+  );
+  color: rgb(120, 252, 87);
+  border: 5px solid rgb(77, 39, 39);
+  border-radius: 2%;
+  font-family: "VT323", monospace;
+  font-size: 3em;
+  margin: 5vh 0 4vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad-field {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 1.5vh;
+  grid-template-areas:
+    "Q W E"
+    "A S D"
+    "Z X C";
+  justify-items: center;
+  align-items: center;
+}
+
+#Q {
+  grid-area: Q;
+}
+#W {
+  grid-area: W;
+}
+#E {
+  grid-area: E;
+}
+#A {
+  grid-area: A;
+}
+#S {
+  grid-area: S;
+}
+#D {
+  grid-area: D;
+}
+#Z {
+  grid-area: Z;
+}
+#X {
+  grid-area: X;
+}
+#C {
+  grid-area: C;
+}
+
+/* .drum-pad {
+  height: 6vh;
+  width: 6vh;
+  border-radius: 7%;
+  font-size: x-large;
+  background: linear-gradient(white, 75%, rgb(221, 214, 191));
+  transition: all 0.3s ease;
+} */
+
+.drum-pad {
+  font-size: xx-large;
+}
+
+button {
+  background: radial-gradient(rgb(214, 205, 179), white);
+  height: 6vh;
+  width: 6vh;
+  border-radius: 7%;
+  cursor: pointer;
+}
+
+button:hover {
+}
+
+button:active {
+}
+
+button:focus {
+  outline: 0;
+  animation: press-glow 0.3s ease-out;
+}
+
+@keyframes press-glow {
+  100% {
+    transform: scale(0.95);
+    background: radial-gradient(rgb(120, 252, 87), 10%, white);
+  }
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer a {
+  color: gray;
+}
+
+/* CSS Reset by Josh Comeau */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
 }
